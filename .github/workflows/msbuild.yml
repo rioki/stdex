@@ -30,20 +30,16 @@ jobs:
       run: msbuild /m /p:Configuration=Release /p:Platform=x64 stdex.sln
       
     - name: Unit Tests x86 Debug
-      uses: Amadevus/pwsh-script@v2.0.1
-      with:
-        script: "x86\\Debug\\stdex-test.exe"
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x86/Debug/stdex-test.exe
     - name: Unit Tests x86 Release
-      uses: Amadevus/pwsh-script@v2.0.1
-      with:
-        script: "x86\\Release\\stdex-test.exe"
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x86/Release/stdex-test.exe
     - name: Unit Tests x64 Debug
-      uses: Amadevus/pwsh-script@v2.0.1
-      with:
-        script: "x64\\Debug\\stdex-test.exe"
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x64/Debug/stdex-test.exe
     - name: Unit Tests x64 Release
-      uses: Amadevus/pwsh-script@v2.0.1
-      with:
-        script: "x64\\Release\\stdex-test.exe"
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x64/Release/stdex-test.exe
 
     
