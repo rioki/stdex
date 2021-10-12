@@ -1,0 +1,11 @@
+
+# Build Outputs
+x86
+x64
+
+# Visual Studio Temp Files
+.vs
+*.user
+
+# Nuget Temp
+packages
