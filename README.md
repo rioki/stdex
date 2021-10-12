@@ -1,7 +1,7 @@
 
 # Rioki's Standard Extentions
 
-A collection of useful code that should be in the standard librart, but is not.
+A collection of useful code that should be in the standard library, but is not.
 
 [![MSBuild](https://github.com/rioki/stdex/actions/workflows/msbuild.yml/badge.svg)](https://github.com/rioki/stdex/actions/workflows/msbuild.yml)
 
