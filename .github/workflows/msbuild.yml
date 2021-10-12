@@ -1,0 +1,45 @@
+name: MSBuild
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Restore NuGet packages
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: nuget restore 
+
+    - name: Build x86 Debug
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: msbuild /m /p:Configuration=Debug /p:Platform=x86 stdex.sln
+    - name: Build x86 Release
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: msbuild /m /p:Configuration=Release /p:Platform=x86 stdex.sln
+    - name: Build x64 Debug
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: msbuild /m /p:Configuration=Debug /p:Platform=x64 stdex.sln
+    - name: Build x64 Release
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: msbuild /m /p:Configuration=Release /p:Platform=x64 stdex.sln
+      
+    - name: Unit Tests x86 Debug
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x86/Debug/stdex-test.exe
+    - name: Unit Tests x86 Release
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x86/Release/stdex-test.exe
+    - name: Unit Tests x64 Debug
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x64/Debug/stdex-test.exe
+    - name: Unit Tests x64 Release
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: x64/Release/stdex-test.exe
+
+    
