@@ -50,6 +50,8 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="array_view_test.cpp" />
+    <ClCompile Include="distance_test.cpp" />
+    <ClCompile Include="mass_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -18,5 +18,11 @@
     <ClInclude Include="array_view.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="distance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
