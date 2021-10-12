@@ -19,9 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="algorithm.h" />
     <ClInclude Include="array_view.h" />
     <ClInclude Include="distance.h" />
+    <ClInclude Include="iterator.h" />
     <ClInclude Include="mass.h" />
+    <ClInclude Include="ring.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
